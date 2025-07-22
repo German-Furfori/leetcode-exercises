@@ -1,7 +1,10 @@
 package org.example.exercises;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Exercises {
 
@@ -63,6 +66,20 @@ public class Exercises {
         }
 
         return aMap.equals(bMap);
+    }
+
+    /**
+     * Counting Sort 1
+     * https://www.hackerrank.com/challenges/countingsort1/problem
+     * */
+    public static List<Integer> countingSort(List<Integer> arr) {
+        int[] result = new int[100];
+
+        for (Integer num : arr) {
+            result[num] = result[num] + 1;
+        }
+
+        return Arrays.stream(result).boxed().collect(Collectors.toList());
     }
 
 }
