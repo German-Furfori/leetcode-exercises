@@ -4,6 +4,8 @@ import org.example.MainTests;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class ExercisesTest extends MainTests {
 
@@ -26,6 +28,17 @@ public class ExercisesTest extends MainTests {
     public void testRepeatedString() {
         assertEquals(7L, Exercises.repeatedString("aba", 10));
         assertEquals(1000000000000L, Exercises.repeatedString("a", 1000000000000L));
+    }
+
+    /**
+     * Java Anagram
+     * https://www.hackerrank.com/challenges/java-anagrams/problem
+     * */
+    @Test
+    public void testIsAnagram() {
+        assertTrue(Exercises.isAnagram("margana", "anagram"));
+        assertTrue(Exercises.isAnagram("Hello", "hello"));
+        assertFalse(Exercises.isAnagram("marganaa", "anagramm"));
     }
 
 }

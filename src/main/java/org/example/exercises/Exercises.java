@@ -1,5 +1,6 @@
 package org.example.exercises;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -43,6 +44,29 @@ public class Exercises {
         }
 
         return total;
+    }
+
+    /**
+     * Java Anagram
+     * https://www.hackerrank.com/challenges/java-anagrams/problem
+     * */
+    public static boolean isAnagram(String a, String b) {
+        if (a.length() != b.length()) return false;
+
+        char[] first = a.toLowerCase().toCharArray();
+        char[] second = b.toLowerCase().toCharArray();
+
+        java.util.Arrays.sort(first);
+        java.util.Arrays.sort(second);
+
+        String a1 = new String(first);
+        String b1 = new String(second);
+
+        for (int i = 0; i < a.length(); i++) {
+            if (a1.charAt(i) != b1.charAt(i)) return false;
+        }
+
+        return true;
     }
 
 }
