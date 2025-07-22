@@ -89,4 +89,27 @@ public class ExercisesTest extends MainTests {
         );
     }
 
+    /**
+     * Missing Numbers
+     * https://www.hackerrank.com/challenges/missing-numbers/problem
+     * */
+    @Test
+    public void testMissingNumbers() {
+        this.assertIntArrayValues(
+                new ArrayList<>(List.of(204, 205, 206)),
+                Exercises.missingNumbers(
+                        new ArrayList<>(List.of(203, 204, 205, 206, 207, 208, 203, 204, 205, 206)),
+                        new ArrayList<>(List.of(203, 204, 204, 205, 206, 207, 205, 208, 203, 206, 205, 206, 204))
+                )
+        );
+
+        this.assertIntArrayValues(
+                new ArrayList<>(List.of(3, 7, 8, 10, 12)),
+                Exercises.missingNumbers(
+                        new ArrayList<>(List.of(11, 4, 11, 7, 13, 4, 12, 11, 10, 14)),
+                        new ArrayList<>(List.of(11, 4, 11, 7, 3, 7, 10, 13, 4, 8, 12, 11, 10, 14, 12))
+                )
+        );
+    }
+
 }

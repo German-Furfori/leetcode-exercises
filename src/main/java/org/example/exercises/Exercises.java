@@ -1,6 +1,8 @@
 package org.example.exercises;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -80,6 +82,33 @@ public class Exercises {
         }
 
         return Arrays.stream(result).boxed().collect(Collectors.toList());
+    }
+
+    /**
+     * Missing Numbers
+     * https://www.hackerrank.com/challenges/missing-numbers/problem
+     * */
+    public static List<Integer> missingNumbers(List<Integer> arr, List<Integer> brr) {
+        HashMap<Integer, Integer> arrMap = new HashMap<>();
+        HashMap<Integer, Integer> brrMap = new HashMap<>();
+        List<Integer> result = new ArrayList<>();
+
+        for (Integer num : arr) {
+            arrMap.put(num, arrMap.getOrDefault(num, 0) + 1);
+        }
+
+        for (Integer num : brr) {
+            brrMap.put(num, brrMap.getOrDefault(num, 0) + 1);
+        }
+
+        for (Map.Entry<Integer, Integer> entry : brrMap.entrySet()) {
+            if (!arrMap.containsKey(entry.getKey()) ||
+                    !arrMap.get(entry.getKey()).equals(entry.getValue())) result.add(entry.getKey());
+        }
+
+        Collections.sort(result);
+
+        return result;
     }
 
 }
