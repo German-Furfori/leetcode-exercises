@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Exercises {
@@ -109,6 +111,24 @@ public class Exercises {
         Collections.sort(result);
 
         return result;
+    }
+
+    /**
+     * Two Strings
+     * https://www.hackerrank.com/challenges/two-strings/problem
+     * */
+    public static String twoStrings(String s1, String s2) {
+        Set<Character> s1Set = new HashSet<>();
+
+        for (char c : s1.toCharArray()) {
+            s1Set.add(c);
+        }
+
+        for (char c : s2.toCharArray()) {
+            if (s1Set.contains(c)) return "YES";
+        }
+
+        return "NO";
     }
 
 }

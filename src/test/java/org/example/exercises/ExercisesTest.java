@@ -112,4 +112,20 @@ public class ExercisesTest extends MainTests {
         );
     }
 
+    /**
+     * Two Strings
+     * https://www.hackerrank.com/challenges/two-strings/problem
+     * */
+    @Test
+    public void testTwoStrings() {
+        assertEquals("YES", Exercises.twoStrings("hello", "world"));
+        assertEquals("NO", Exercises.twoStrings("hi", "world"));
+        assertEquals("NO", Exercises.twoStrings("wouldyoulikefries", "abcabcabcabcabcabc"));
+        assertEquals("YES", Exercises.twoStrings("hackerrankcommunity", "cdecdecdecde"));
+        assertEquals("YES", Exercises.twoStrings("jackandjill", "wentupthehill"));
+        assertEquals("NO", Exercises.twoStrings("writetoyourparents", "fghmqzldbc"));
+        assertEquals("YES", Exercises.twoStrings("aardvark", "apple"));
+        assertEquals("NO", Exercises.twoStrings("beetroot", "sandals"));
+    }
+
 }
